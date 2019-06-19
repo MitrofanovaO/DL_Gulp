@@ -34,7 +34,10 @@ function js() {
 }
 //Инклудинг компонентов на страницы и последующая обработка html кода
 function html() {
-  return gulp.src('./src/html/pages/*.html')
+  return gulp.src([
+    './src/html/index.html',
+    './src/html/contacts.html'
+  ])
   .pipe(fileinclude({prefix: '@@', basepath: '@file'}))
   .pipe(gulp.dest('./build'))
   .pipe(browserSync.reload({ stream: true }))
