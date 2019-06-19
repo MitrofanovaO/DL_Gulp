@@ -34,10 +34,7 @@ function js() {
 }
 //Инклудинг компонентов на страницы и последующая обработка html кода
 function html() {
-  return gulp.src([
-    './src/html/index.html',
-    './src/html/contacts.html'
-  ])
+  return gulp.src('src/html/pages/*.html')
   .pipe(fileinclude({prefix: '@@', basepath: '@file'}))
   .pipe(gulp.dest('./build'))
   .pipe(browserSync.reload({ stream: true }))
@@ -64,13 +61,16 @@ function watch() {
     server: {
       baseDir: "./build"
     }
- });
- //Следить за SCSS файлами
- gulp.watch('./src/scss/**/*.scss', scss)
- //Следить за JS файлами
- gulp.watch('./src/js/*.js', js)
- //При изменении HTML запустить синхронизацию
- gulp.watch("./src/html/*.html", html).on('change', browserSync.reload);
+  });
+  //Следить за SCSS файлами
+  gulp.watch('./src/scss/**/*.scss', scss)
+  //Следить за JS файлами
+  gulp.watch('./src/js/*.js', js)
+  //При изменении HTML запустить синхронизацию
+  gulp.watch([
+    "./src/html/components/*.html",
+    "./src/html/pages/*.html"
+  ], html).on('change', browserSync.reload);
 }
 
 gulp.task('scss', scss);
