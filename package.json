@@ -19,5 +19,8 @@
   "devDependencies": {},
   "keywords": [],
   "author": "ducker-dev <the.ivan.smirnov@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "browserslist": [
+    "defaults"
+  ]
 }
