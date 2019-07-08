@@ -38,12 +38,6 @@ function html() {
   .pipe(gulp.dest('./build'))
   .pipe(browserSync.reload({ stream: true }))
 }
-//Обработка шрифтов
-function fonts() {
-  return gulp.src('./src/fonts/*')
-  .pipe(gulp.dest('./build/fonts'))
-  .pipe(browserSync.reload({ stream: true }))
-}
 //Обработка img
 function img() {
   return gulp.src('./src/image/*')
@@ -61,6 +55,8 @@ function watch() {
       baseDir: "./build"
     }
   });
+  //Следить за Img файлами
+  gulp.watch('./src/image/*', img)
   //Следить за SCSS файлами
   gulp.watch('./src/scss/**/*.scss', scss)
   //Следить за JS файлами
@@ -75,11 +71,10 @@ function watch() {
 gulp.task('scss', scss);
 gulp.task('js', js);
 gulp.task('html', html);
-gulp.task('fonts', fonts);
 gulp.task('img', img);
 gulp.task('watch', watch);
 
 //Запуск buld проекта
-gulp.task('build', gulp.series(clean, gulp.parallel(scss, js, html, fonts, img)))
+gulp.task('build', gulp.series(clean, gulp.parallel(scss, js, html, img)))
 //Запуск dev проекта
 gulp.task('dev', gulp.series('build', 'watch'));

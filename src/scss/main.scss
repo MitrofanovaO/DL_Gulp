@@ -2,12 +2,15 @@
 @import "./components/common";
 
 //Импорт шрифтов
-@import "./components/fonts";
+// @import "./components/fonts";
 
 //Импорт стилей страниц
 @import "./pages/index";
 @import "./pages/contacts";
+@import "./pages/blog";
+
 
 //Импорт компонентов для страниц
 @import "./components/header";
 @import "./components/footer";
+@import "./components/menu";

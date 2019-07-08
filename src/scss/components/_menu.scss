@@ -1,0 +1,21 @@
+.menu{
+
+    &__link {
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 300;     
+
+        &_active {
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
+        &:hover {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.5);
+        }
+      }
+}
