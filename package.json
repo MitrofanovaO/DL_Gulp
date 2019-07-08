@@ -1,9 +1,9 @@
 {
-  "name": "ducker-dev",
+  "name": "MitrofanovaO",
   "version": "1.0.0",
   "description": "My official site",
   "main": "index.js",
-  "repository": "https://github.com/ducker-dev/ducker-dev.github.io.git",
+  "repository": "https://github.com/MitrofanovaO/DL_Gulp.git",
   "dependencies": {
     "browser-sync": "^2.26.5",
     "del": "^4.1.1",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {},
   "keywords": [],
-  "author": "ducker-dev <the.ivan.smirnov@gmail.com>",
+  "author": "MitrofanovaO <carobkatlt63@gmail.com>",
   "license": "MIT",
   "browserslist": [
     "defaults"
